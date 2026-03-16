@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Car Launcher</string>
+
+    <!-- App labels -->
+    <string name="label_waze">WAZE</string>
+    <string name="label_maps">MAPS</string>
+    <string name="label_spotify">SPOTIFY</string>
+    <string name="label_youtube">YOUTUBE</string>
+    <string name="label_phone">TELEFONE</string>
+    <string name="label_contacts">CONTACTOS</string>
+    <string name="label_triprank">TRIPRANK</string>
+</resources>

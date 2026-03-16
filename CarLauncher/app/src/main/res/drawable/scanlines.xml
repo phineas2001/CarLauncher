@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Scanline effect: use a thin repeating gradient to simulate CRT lines -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:tileMode="repeat"
+            android:gravity="top"
+            android:src="@drawable/scanline_tile" />
+    </item>
+</layer-list>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_hud"
+    android:keepScreenOn="true">
+
+    <!-- Scanline overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scanlines"
+        android:alpha="0.04" />
+
+    <!-- Top HUD bar -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:background="@drawable/top_bar_bg">
+
+        <!-- Clock -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="36sp"
+                android:fontFamily="@font/orbitron_bold"
+                android:textColor="#00E5FF"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seg, 01 Jan"
+                android:textSize="11sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.15" />
+        </LinearLayout>
+
+        <!-- Center title -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="◈  CAR MODE  ◈"
+            android:textSize="13sp"
+            android:fontFamily="@font/orbitron"
+            android:textColor="#00E5FF"
+            android:alpha="0.7"
+            android:letterSpacing="0.3" />
+
+        <!-- Status indicators -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical"
+            android:spacing="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="●"
+                android:textSize="10sp"
+                android:textColor="#00E676"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ONLINE"
+                android:textSize="10sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Horizontal divider glow -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/top_bar"
+        android:background="@drawable/divider_glow" />
+
+    <!-- Main app grid -->
+    <LinearLayout
+        android:id="@+id/app_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:layout_centerVertical="false"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="28dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <!-- NAVIGATION GROUP -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAVEGAÇÃO"
+                android:textSize="9sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.3"
+                android:alpha="0.6"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Waze -->
+            <include
+                android:id="@+id/btn_waze"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="waze" />
+
+            <Space android:layout_height="14dp" android:layout_width="match_parent" />
+
+            <!-- Maps -->
+            <include
+                android:id="@+id/btn_maps"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="maps" />
+        </LinearLayout>
+
+        <!-- Separator -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/vertical_divider"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- MEDIA GROUP -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEDIA"
+                android:textSize="9sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.3"
+                android:alpha="0.6"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Spotify -->
+            <include
+                android:id="@+id/btn_spotify"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="spotify" />
+
+            <Space android:layout_height="14dp" android:layout_width="match_parent" />
+
+            <!-- YouTube -->
+            <include
+                android:id="@+id/btn_youtube"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="youtube" />
+        </LinearLayout>
+
+        <!-- Separator -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/vertical_divider"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- COMUNICAÇÃO GROUP -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COMUNICAÇÃO"
+                android:textSize="9sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.3"
+                android:alpha="0.6"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Phone -->
+            <include
+                android:id="@+id/btn_phone"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="phone" />
+
+            <Space android:layout_height="14dp" android:layout_width="match_parent" />
+
+            <!-- Contacts -->
+            <include
+                android:id="@+id/btn_contacts"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="contacts" />
+        </LinearLayout>
+
+        <!-- Separator -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/vertical_divider"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- VIAGENS GROUP -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIAGENS"
+                android:textSize="9sp"
+                android:fontFamily="@font/orbitron"
+                android:textColor="#4DD0E1"
+                android:letterSpacing="0.3"
+                android:alpha="0.6"
+                android:layout_marginBottom="12dp" />
+
+            <!-- TripRank -->
+            <include
+                android:id="@+id/btn_triprank"
+                layout="@layout/item_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="triprank" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom HUD bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/top_bar_bg"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▲  LENOVO M11  ·  CAR LAUNCHER  ▲"
+            android:textSize="9sp"
+            android:fontFamily="@font/orbitron"
+            android:textColor="#00E5FF"
+            android:alpha="0.4"
+            android:letterSpacing="0.3" />
+    </LinearLayout>
+
+    <!-- Corner decorations -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/top_bar"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/corner_tl"
+        android:alpha="0.4" />
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/top_bar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/corner_tr"
+        android:alpha="0.4" />
+
+</RelativeLayout>
